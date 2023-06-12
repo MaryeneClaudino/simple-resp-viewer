@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsividade Intermediárias</title>
+
+    <style>
+        #iframes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1vw;
+        }
+    </style>
+</head>
+
+<body onload="createIframes()">
+    <div id="iframes"></div>
+    <script>
+        var resolucoes = [[960, 640], [1024, 768], [1152, 768], [1280, 800], [1366, 768], [1440, 900], [1680, 1050]];
+
+        function createIframes() {
+            console.log("createIframes");
+            var container = document.getElementById("iframes");
+            for (var i = 0; i < resolucoes.length; i++) {
+                console.log(resolucoes[i][0] + "x" + resolucoes[i][1]);
+                container.innerHTML += "<h1>" + resolucoes[i][0] + "x" + resolucoes[i][1] + "</h1> <iframe width='" + resolucoes[i][0] + "' height='" + resolucoes[i][1] + "' src='http://localhost:8100/home'></iframe>";
+            }
+        }
+    </script>
+</body>
+
+</html>

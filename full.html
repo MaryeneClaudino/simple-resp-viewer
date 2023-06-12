@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsividade FullHD e Maiores</title>
+
+    <style>
+        #iframes {
+            display: flex;
+            flex-direction: column;
+            gap: 1vw;
+        }
+    </style>
+</head>
+
+<body onload="createIframes()">
+    <div id="iframes"></div>
+    <script>
+        var resolucoes = [[1920, 1080], [2048, 1536], [4096, 3072], [5120, 3200], [6400, 4096], [7680, 4800]];
+
+        function createIframes() {
+            console.log("createIframes");
+            var container = document.getElementById("iframes");
+            for (var i = 0; i < resolucoes.length; i++) {
+                console.log(resolucoes[i][0] + "x" + resolucoes[i][1]);
+                container.innerHTML += "<h1>" + resolucoes[i][0] + "x" + resolucoes[i][1] + "</h1> <iframe width='" + resolucoes[i][0] + "' height='" + resolucoes[i][1] + "' src='http://localhost:8100/home'></iframe>";
+            }
+        }
+    </script>
+</body>
+
+</html>
